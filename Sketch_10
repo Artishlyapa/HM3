@@ -1,0 +1,21 @@
+int bars = 20;
+
+void setup() {
+  size(500,500);
+  background(0);
+  frameRate(7);
+  colorMode(RGB,100);
+}
+
+void draw() {
+  if (bars < width) {
+    fill(0);
+    rect(bars, 0, 10, height);
+    fill(100);
+    strokeWeight(4);
+    rect(bars, random(height), 10, height);
+    bars +=20;
+  } else {
+    bars = 20;
+  }
+}
