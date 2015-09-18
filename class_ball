@@ -4,13 +4,13 @@ class Ball {
   float r;
 
   Ball() {
-    xp = random(100,500);
-    yp = random(100,500);
+    colorMode(HSB, 100);
+    fill(random(100),random(100),90); 
+    xp = random(50,450);
+    yp = random(50,450);
     r = 50;
     xv = random(2.5);
     yv = random(4);
-    colorMode(HSB, 100);
-    fill(random(100),random(100),90); 
   }
   
   void create() {
