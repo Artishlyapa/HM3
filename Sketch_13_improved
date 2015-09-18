@@ -1,0 +1,49 @@
+class Ball {
+  float xp, yp;
+  float xv, yv;
+  float r;
+
+  Ball() {
+    xp = random(100,500);
+    yp = random(100,500);
+    r = 50;
+    xv = random(2.5);
+    yv = random(4);
+    colorMode(HSB, 100);
+    fill(random(100),random(100),90);
+  }
+  
+  void create() {
+    noStroke();
+    ellipse(xp,yp,r*2,r*2);
+  }
+  
+  //added class
+  
+  void step() {
+    xp += xv;
+    yp += yv;
+    if (xp < r || xp > width - r) {
+      xv *= -1;
+    }
+    if (yp < r || yp > height - r) {
+      yv *= -1;
+    }
+  }
+}
+
+Ball b,b2;
+
+void setup() {
+  size (500,500);
+  b = new Ball();
+  b2 = new Ball();
+}
+
+void draw() {
+  background(100);
+  b.create();
+  b.step();
+  b2.create();
+  b2.step();
+}
