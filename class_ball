@@ -2,10 +2,11 @@ class Ball {
   float xp, yp;
   float xv, yv;
   float r;
+  color c;
 
   Ball() {
     colorMode(HSB, 100);
-    fill(random(100),random(100),90); 
+    c = color(random(100),100,90); 
     xp = random(50,450);
     yp = random(50,450);
     r = 50;
@@ -15,6 +16,7 @@ class Ball {
   
   void create() {
     noStroke();
+    fill(c);
     ellipse(xp,yp,r*2,r*2);
   }
   
